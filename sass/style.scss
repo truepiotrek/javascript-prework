@@ -1,3 +1,33 @@
+$font-header: 'Montserrat', sans-serif;
+$font-text: 'Roboto Slab', serif;
+
+
 .container {
     text-align: center;
+}
+.title {
+    font-family: $font-header;
+}
+h1 {
+    font-size: 40px;
+}
+h2 {
+    font-size: 35px;
+}
+button {
+    background-color: gold;
+    border-radius: 10px;
+    border: 1px solid white;
+    color: white;
+    font-size: 25px;
+    font-family: $font-text;
+    padding: 10px;
+    margin: 20px;
+}
+body {
+    background-image: url(/images/rock-paper-scissor-ft.jpg);
+    img {
+        max-width: 900px;
+    }
+    color: white;
 }

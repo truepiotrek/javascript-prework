@@ -1,4 +1,36 @@
 .container {
   text-align: center;
 }
+
+.title {
+  font-family: "Montserrat", sans-serif;
+}
+
+h1 {
+  font-size: 40px;
+}
+
+h2 {
+  font-size: 35px;
+}
+
+button {
+  background-color: gold;
+  border-radius: 10px;
+  border: 1px solid white;
+  color: white;
+  font-size: 25px;
+  font-family: "Roboto Slab", serif;
+  padding: 10px;
+  margin: 20px;
+}
+
+body {
+  background-image: url(/images/rock-paper-scissor-ft.jpg);
+  color: white;
+}
+
+body img {
+  max-width: 900px;
+}
 /*# sourceMappingURL=style.css.map */
