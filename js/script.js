@@ -1,18 +1,30 @@
 var argButtonName, buttonPaper, buttonRock, buttonScissors;
 
 buttonRock = document.getElementById('button-rock');
-buttonRock.addEventListener('click', function(){ buttonClicked('Guzik KAMIEŃ'); });
-buttonPaper = document.getElementById('button-paper');
-buttonPaper.addEventListener('click', function(){ buttonClicked('Guzik PAPIER'); });
-buttonScissors = document.getElementById('button-scissors');
-buttonScissors.addEventListener('click', function(){ buttonClicked('Guzik NOŻYCE'); });
+buttonRock.addEventListener('click', function() {
+  buttonClicked('kamień');
+});
 
-function buttonClicked(argButtonName) {
+buttonPaper = document.getElementById('button-paper');
+buttonPaper.addEventListener('click', function() { 
+  buttonClicked('papier'); 
+});
+
+buttonScissors = document.getElementById('button-scissors');
+buttonScissors.addEventListener('click', function() { 
+  buttonClicked('nożyce'); 
+});
+
+function buttonClicked(buttonName) {
   clearMessages();
-  console.log(argButtonName + ' został kliknięty');
+  argButtonName = buttonName;
+  console.log(buttonName + ' został kliknięty');
+  startGame(); 
 }
 
-var argComputerMove, argMoveId, argPlayerMove, computerMove, playerInput, playerMove, randomNumber;
+console.log(argButtonName);
+
+var argComputerMove, argMoveId, argPlayerMove, computerMove, playerMove, randomNumber;
 
 function getMoveName(argMoveId) {
   console.log('wywołano funkcję getMoveName z argumentem: ' + argMoveId);
@@ -46,7 +58,6 @@ function displayResult(argPlayerMove, argComputerMove) {
 
 function startGame() {
   playerMove = argButtonName;
-  console.log('wybór ruchu gracza to: ' + playerInput);
   console.log('ruch gracza to: ' + playerMove);
   randomNumber = Math.floor(Math.random() * 3 + 1);
   console.log('wylosowana liczba to: ' + randomNumber);
