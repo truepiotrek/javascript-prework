@@ -17,8 +17,8 @@ h2 {
 button {
     background-color: gold;
     border-radius: 10px;
-    border: 1px solid white;
-    color: white;
+    border: 1px solid black;
+    color: black;
     font-size: 25px;
     font-family: $font-text;
     padding: 10px;
@@ -26,13 +26,16 @@ button {
     object-fit: cover;
 }
 body {
-    background-image: url(/images/rock-paper-scissor-ft.jpg);
-    img {
-        max-width: 900px;
-    }
-    color: white;
+    background-image: url(/images/wood.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: black;
 }
 #messages {
+    font-family: $font-text;
+    font-size: 30px;
+}
+p  {
     font-family: $font-text;
     font-size: 30px;
 }
