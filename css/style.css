@@ -42,5 +42,12 @@ body {
 p {
   font-family: "Roboto Slab", serif;
   font-size: 30px;
+  color: white;
+}
+
+ul {
+  font-family: "Roboto Slab", serif;
+  font-size: 30px;
+  color: black;
 }
 /*# sourceMappingURL=style.css.map */
