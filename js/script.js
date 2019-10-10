@@ -6,12 +6,12 @@ if (buttonRock != null) {
   });  
 }
 
-var buttonPaper = document.getElementById('button-paper');
+const buttonPaper = document.getElementById('button-paper');
 buttonPaper.addEventListener('click', function() { 
   buttonClicked('papier');
 });
 
-var buttonScissors = document.getElementById('button-scissors');
+const buttonScissors = document.getElementById('button-scissors');
 buttonScissors.addEventListener('click', function() { 
   buttonClicked('nożyce');
 });
