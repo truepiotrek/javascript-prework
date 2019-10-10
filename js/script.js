@@ -1,5 +1,5 @@
 
-var buttonRock = document.getElementById('button-rock');
+const buttonRock = document.getElementById('button-rock');
 if (buttonRock != null) {
   buttonRock.addEventListener('click', function() {
     buttonClicked('kamień');
