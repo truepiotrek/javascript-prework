@@ -23,6 +23,7 @@ button {
     font-family: $font-text;
     padding: 10px;
     margin: 20px;
+    object-fit: cover;
 }
 body {
     background-image: url(/images/rock-paper-scissor-ft.jpg);
@@ -30,4 +31,8 @@ body {
         max-width: 900px;
     }
     color: white;
+}
+#messages {
+    font-family: $font-text;
+    font-size: 30px;
 }
