@@ -52,14 +52,14 @@ function displayResult(argPlayerMove, argComputerMove) {
 }
 
 function startGame(playerMove) {
-  let randomNumber = Math.floor(Math.random() * 3 + 1);
+  const randomNumber = Math.floor(Math.random() * 3 + 1);
 
   clearMessages();
 
   console.log('ruch gracza to: ' + playerMove);
   console.log('wylosowana liczba to: ' + randomNumber);
 
-  let computerMove = getMoveName(randomNumber);
+  const computerMove = getMoveName(randomNumber);
 
   console.log('ruch komputera to: ' + computerMove);
   displayResult(playerMove, computerMove);
