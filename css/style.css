@@ -28,7 +28,6 @@ button {
 }
 
 body {
-  background-image: url(/images/wood.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   color: black;
@@ -42,7 +41,7 @@ body {
 p {
   font-family: "Roboto Slab", serif;
   font-size: 30px;
-  color: white;
+  color: black;
 }
 
 ul {
