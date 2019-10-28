@@ -1,3 +1,5 @@
+
+
 const actions = {
   kamien: 'kamień',
   nozyce: 'nożyce',
@@ -8,24 +10,6 @@ let wins = 0;
 let looses = 0;
 let wrapperBoxWins = document.getElementById('wygrane');
 let wrapperBoxLoss = document.getElementById('przegrane');
-
-
-function buttonClickHandler (event){
-  event.preventDefault();
-  console.log(event);
-  const clickedElement = event.target;
-  console.log(clickedElement);
-  const buttonName = clickedElement.getAttribute('data-move-id')
-  console.log(buttonName);
-  startGame(buttonName);
-};
-
-const buttons = document.getElementById('buttons');
-const buttonsName = buttons.querySelectorAll('button');
-for(let buttonName of buttonsName){
-  console.log(buttonName);
-  buttonName.addEventListener('click', buttonClickHandler);
-}
 
 function getMoveName(argMoveId) {
   console.log('wywołano funkcję getMoveName z argumentem: ' + argMoveId);
@@ -40,8 +24,6 @@ function getMoveName(argMoveId) {
     return actions.kamien;
   }
 }
-
-
 
 function compareMoves(argPlayerMove, argComputerMove) {
   let result = '';
@@ -69,20 +51,23 @@ function compareMoves(argPlayerMove, argComputerMove) {
 }
 
 
-function startGame(paramPlayerMove) {
+function startGame() {
   const randomNumber = Math.floor(Math.random() * 3 + 1);
+  const randomNumber2 = Math.floor(Math.random() * 3 + 1);
 
   clearMessages();
 
-  console.log('ruch gracza to: ' + paramPlayerMove);
   console.log('wylosowana liczba to: ' + randomNumber);
 
   const computerMove = getMoveName(randomNumber);
   console.log('ruch komputera to: ' + computerMove);
+  const computerMove2 = getMoveName(randomNumber2);
+  console.log('ruch gracza to: ' + computerMove2);
 
-  const result = compareMoves(paramPlayerMove, computerMove);
+
+  const result = compareMoves(computerMove2, computerMove);
   console.log(result);
-  printMessage('Zagrałem ' + computerMove + ', a Ty ' + paramPlayerMove);
+  printMessage('Zagrałem ' + computerMove + ', a Ty ' + computerMove2);
   if(result === 'przegrana'){
     printMessage('Przegrałeś, ale nie smutaj ;(((')
   } else if(result === 'wygrana'){
@@ -90,5 +75,12 @@ function startGame(paramPlayerMove) {
   } else {
     printMessage('What? WHAT! HOW!? REMIS!')
   }
+  console.log("oto id tego interwala: ", interval);
+
+  if(wins === 100){
+    clearInterval(interval);
+  }
 }
+
+const interval = setInterval(startGame, 10);
 
