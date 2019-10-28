@@ -77,10 +77,19 @@ function startGame() {
   }
   console.log("oto id tego interwala: ", interval);
 
-  if(wins === 100){
-    clearInterval(interval);
+  
+}
+
+let intervalID = setInterval(startGame, 500);
+
+function startGameClickHandler(event){
+  event.preventDefault();
+  if(intervalID != 0){
+    clearInterval(intervalID)
+    intervalID = 0
+  } else {
+    intervalID = setInterval(startGame, 10)
   }
 }
 
-const interval = setInterval(startGame, 10);
-
+// zrobić button i przedstawić to na zasadzie clickhandleraa, który działa tak, e testuje wartosc intervala. jezeli jest jakas, to ustawia na 0, jezeli jest 0, to ustawia na odpowiedni interval
