@@ -4,6 +4,12 @@ const actions = {
   papier: 'papier',
 };
 
+let wins = 0;
+let looses = 0;
+let wrapperBoxWins = document.getElementById('wygrane');
+let wrapperBoxLoss = document.getElementById('przegrane');
+
+
 function buttonClickHandler (event){
   event.preventDefault();
   console.log(event);
@@ -11,8 +17,6 @@ function buttonClickHandler (event){
   console.log(clickedElement);
   const buttonName = clickedElement.getAttribute('data-move-id')
   console.log(buttonName);
-
-
   startGame(buttonName);
 };
 
@@ -37,21 +41,33 @@ function getMoveName(argMoveId) {
   }
 }
 
-function displayResult(argPlayerMove, argComputerMove) {
+
+
+function compareMoves(argPlayerMove, argComputerMove) {
+  let result = '';
   console.log('wywołano funkcję displayResults z argumentami: ' + argPlayerMove + ', ' + argComputerMove);
   if (argPlayerMove == actions.papier && argComputerMove == actions.kamien) {
-    printMessage('Wygrywasz!');
+    result = 'wygrana';
+    wins++;
   } else if (argPlayerMove == actions.kamien && argComputerMove == actions.nozyce) {
-    printMessage('Wygrywasz!');
+    result = 'wygrana';
+    wins++;
   } else if (argPlayerMove == actions.nozyce && argComputerMove == actions.papier) {
-    printMessage('Wygrywasz!');
+    result = 'wygrana';
+    wins++;
   } else if (argPlayerMove == argComputerMove) {
-    printMessage('Remis!');
+    result = 'remis';
   } else {
-    printMessage('Przegrywasz :(');
+    result = 'przegrana';
+    looses++;
   }
-  printMessage('Zagrałem ' + argComputerMove + ', a Ty ' + argPlayerMove);
+  wrapperBoxWins.innerHTML = wins;
+  wrapperBoxLoss.innerHTML = looses;
+  console.log(wins);
+  console.log(looses);
+  return result;
 }
+
 
 function startGame(paramPlayerMove) {
   const randomNumber = Math.floor(Math.random() * 3 + 1);
@@ -62,8 +78,17 @@ function startGame(paramPlayerMove) {
   console.log('wylosowana liczba to: ' + randomNumber);
 
   const computerMove = getMoveName(randomNumber);
-
   console.log('ruch komputera to: ' + computerMove);
-  displayResult(paramPlayerMove, computerMove);
+
+  const result = compareMoves(paramPlayerMove, computerMove);
+  console.log(result);
+  printMessage('Zagrałem ' + computerMove + ', a Ty ' + paramPlayerMove);
+  if(result === 'przegrana'){
+    printMessage('Przegrałeś, ale nie smutaj ;(((')
+  } else if(result === 'wygrana'){
+    printMessage('Wygrałeś dobry człowieku :)')
+  } else {
+    printMessage('What? WHAT! HOW!? REMIS!')
+  }
 }
 

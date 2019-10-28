@@ -45,3 +45,14 @@ ul {
     font-size: 30px;
     color: black;
 }
+.results {
+    text-align: center;
+    font-family: $font-text;
+    font-size: 30px;
+    #wygrane {
+        display: inline;
+    }
+    #przegrane {
+        display: inline;
+    }
+}

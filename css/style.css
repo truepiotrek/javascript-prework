@@ -49,4 +49,18 @@ ul {
   font-size: 30px;
   color: black;
 }
+
+.results {
+  text-align: center;
+  font-family: "Roboto Slab", serif;
+  font-size: 30px;
+}
+
+.results #wygrane {
+  display: inline;
+}
+
+.results #przegrane {
+  display: inline;
+}
 /*# sourceMappingURL=style.css.map */
